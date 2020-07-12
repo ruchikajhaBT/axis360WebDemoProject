@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
+import io.percy.selenium.Percy;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,11 +15,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+//import io.percy.examplepercyjavaselenium.Percy;
+
 public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
-	
+	private static Percy percy;
 
 	public TestBase() {
 		try {
@@ -35,13 +37,16 @@ public class TestBase {
 	}
 
 	public static void initialization() {
+		
+		percy = new Percy(driver);
+		
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("FF")) {
-			System.setProperty("webdriver.gecko.driver", "/Users/naveenkhunteta/Documents/SeleniumServer/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 
