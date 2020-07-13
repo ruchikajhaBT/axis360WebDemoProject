@@ -31,13 +31,14 @@ public class CheckoutTest extends TestBase{
 	public void checkOutBook(){
 		loginPage.login(prop.getProperty("username"));
 		landingPage.selectAvailabilityFilter();
+		percy.snapshot("Availability Filter");
 		//landingPage.selectFormatFiltereBook();
-		landingPage.clickFirstBook();
+/*		landingPage.clickFirstBook();
 		percy.snapshot("First Book");
 		landingPage.clickCheckoutBtn();
-		percy.snapshot("Checkout button click");
+		percy.snapshot("Checkout button click");*/
 		landingPage.clickLogoutBtn();
-		percy.snapshot("Logout");
+		percy.snapshot("LoginPage");
 	}
 	
 	@AfterTest

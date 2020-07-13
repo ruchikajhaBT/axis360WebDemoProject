@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.chrome.ChromeOptions;
 import io.percy.selenium.Percy;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -38,16 +40,20 @@ public class TestBase {
 
 	public static void initialization() {
 		
-		percy = new Percy(driver);
-		
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/chromedriver.exe");
+			
+/*			ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--headless");
+	        driver = new ChromeDriver(options);*/
 			driver = new ChromeDriver();
+			percy = new Percy(driver);
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
+			percy = new Percy(driver);
 		}
 
 		driver.manage().window().maximize();
