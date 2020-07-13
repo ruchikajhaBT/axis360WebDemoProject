@@ -8,7 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@percy/agent": "~0"
+    "@percy/agent": "^0.27.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

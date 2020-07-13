@@ -43,11 +43,11 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/chromedriver.exe");
 			
-/*			ChromeOptions options = new ChromeOptions();
+			ChromeOptions options = new ChromeOptions();
 	        options.addArguments("--headless");
-	        driver = new ChromeDriver(options);*/
+	        driver = new ChromeDriver(options);
 			driver = new ChromeDriver();
 			percy = new Percy(driver);
 		} else if (browserName.equals("FF")) {
