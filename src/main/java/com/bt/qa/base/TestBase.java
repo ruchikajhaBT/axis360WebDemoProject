@@ -7,15 +7,16 @@ import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.chrome.ChromeOptions;
-import io.percy.selenium.Percy;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.percy.selenium.Percy;
 
 //import io.percy.examplepercyjavaselenium.Percy;
 
@@ -23,7 +24,7 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
-	private static Percy percy;
+	public static Percy percy;
 
 	public TestBase() {
 		try {
@@ -43,12 +44,13 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
-			//System.setProperty("webdriver.chrome.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/chromedriver.exe");
 			
-			ChromeOptions options = new ChromeOptions();
-	        options.addArguments("--headless");
-	        driver = new ChromeDriver(options);
-			driver = new ChromeDriver();
+			//ChromeOptions options = new ChromeOptions();
+	       // options.addArguments("--headless");
+	         // options.addArguments("--disable-extensions");
+	       // driver = new ChromeDriver(options);
+	        driver = new ChromeDriver();
 			percy = new Percy(driver);
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/geckodriver.exe");
@@ -66,9 +68,7 @@ public class TestBase {
 	}
 	
 	public WebElement elementClickable(WebElement element) {
-		WebElement clickableElement = new WebDriverWait(driver,
-				Duration.ofSeconds(10))
-				.until(ExpectedConditions.elementToBeClickable(element));		
+		WebElement clickableElement = new WebDriverWait(driver,	30).until(ExpectedConditions.elementToBeClickable(element));		
 		return clickableElement;
 		
 	}

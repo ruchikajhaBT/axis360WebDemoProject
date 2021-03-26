@@ -62,7 +62,7 @@ public class LandingPage extends TestBase{
 		/*List<WebElement> checkoutBtns = new ArrayList<WebElement>();
 		checkoutBtns = driver.findElements(By.cssSelector("[class*='btnCheckoutNow']"));*/
 		WebElement navigationPageButton = (new WebDriverWait(driver,
-				Duration.ofSeconds(10)))
+				10))
 				 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(@class,'btnCheckoutNow')]//ancestor::div[@class='axis360-cover_titlecontainer' and @data-formattype='EBT']")));
 		scrollToWebElement(navigationPageButton);
 		navigationPageButton.click();

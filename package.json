@@ -8,11 +8,19 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@percy/agent": "^0.27.0"
+    "@percy/agent": "^0.27.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruchikajhaBT/axis360WebDemoProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ruchikajhaBT/axis360WebDemoProject/issues"
+  },
+  "homepage": "https://github.com/ruchikajhaBT/axis360WebDemoProject#readme"
 }
