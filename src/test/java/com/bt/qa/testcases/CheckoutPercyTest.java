@@ -50,7 +50,7 @@ public class CheckoutPercyTest {
 		driver.get("https://demo.axis360qa.baker-taylor.com");
 		driver.manage().window().maximize();
 		landingPage = new LandingPage();
-		percy.snapshot("homepage");
+		percy.snapshot("homepage.jpg");
 //		System.out.println("before method");
 //		landingPage.selectLoginBtn();
 //		loginPage = new LoginPage();
@@ -74,10 +74,10 @@ public class CheckoutPercyTest {
 		List<Integer> widths=new ArrayList<Integer>();
 		widths.add(1920);
 		
-		percy.snapshot("LoginPopup", widths, 1920, true, "id=ulMyLibrary");
+		percy.snapshot("LoginPopup.jpg", widths, 1920, true, "id=ulMyLibrary");
 		
 		driver.findElement(By.id("LogOnModel_UserName")).sendKeys("bttest01");
-		percy.snapshot("Loginpage");
+		percy.snapshot("Loginpage.jpg");
 		driver.findElement(By.cssSelector("[class*='btn-Popuplogin']")).click();
 /*		landingPage.selectAvailabilityFilter();
 		percy.snapshot("Availability Filter");
