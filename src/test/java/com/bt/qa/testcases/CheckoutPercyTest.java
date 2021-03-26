@@ -79,7 +79,7 @@ public class CheckoutPercyTest {
 		driver.findElement(By.id("LogOnModel_UserName")).sendKeys("bttest01");
 		percy.snapshot("Loginpage");
 		driver.findElement(By.cssSelector("[class*='btn-Popuplogin']")).click();
-		landingPage.selectAvailabilityFilter();
+/*		landingPage.selectAvailabilityFilter();
 		percy.snapshot("Availability Filter");
 		percy.snapshot("loginpage");
 		landingPage.selectFormatFiltereBook();
@@ -89,7 +89,7 @@ public class CheckoutPercyTest {
 		percy.snapshot("Checkoutbuttonclick");
 		landingPage.clickLogoutBtn();
 		driver.findElement(By.id("btnLogout")).click();
-		percy.snapshot("LoginPage");
+		percy.snapshot("LoginPage");*/
 	}
 	
 
