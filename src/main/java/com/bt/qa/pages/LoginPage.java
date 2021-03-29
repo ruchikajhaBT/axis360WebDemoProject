@@ -20,6 +20,9 @@ public class LoginPage extends TestBase{
 	
 	public void login(String userName){
 		libraryCard.sendKeys(userName);
+	}
+	
+	public void clickLoginBtn() {
 		loginBtn.click();
 	}
 	

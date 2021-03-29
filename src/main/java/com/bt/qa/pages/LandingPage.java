@@ -31,6 +31,10 @@ public class LandingPage extends TestBase{
 	
 	@FindBy(id="btnLogout")
 	WebElement logoutBtn;
+	
+	@FindBy(xpath="//button[contains(@class,'btnCheckoutNow')]//ancestor::div[@class='axis360-cover_titlecontainer' and @data-formattype='EBT']")
+	WebElement navigationPageButton;
+	
 
 	public LandingPage() {
 		PageFactory.initElements(driver, this);
@@ -61,11 +65,11 @@ public class LandingPage extends TestBase{
 		System.out.println("entered checkoutFirstBook");
 		/*List<WebElement> checkoutBtns = new ArrayList<WebElement>();
 		checkoutBtns = driver.findElements(By.cssSelector("[class*='btnCheckoutNow']"));*/
-		WebElement navigationPageButton = (new WebDriverWait(driver,
+		/*WebElement navigationPageButton = (new WebDriverWait(driver,
 				10))
-				 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(@class,'btnCheckoutNow')]//ancestor::div[@class='axis360-cover_titlecontainer' and @data-formattype='EBT']")));
+				 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(@class,'btnCheckoutNow')]//ancestor::div[@class='axis360-cover_titlecontainer' and @data-formattype='EBT']")));*/
 		scrollToWebElement(navigationPageButton);
-		navigationPageButton.click();
+		elementClickable(navigationPageButton).click();
 		System.out.println("After elementclickable method");
 
 	}
