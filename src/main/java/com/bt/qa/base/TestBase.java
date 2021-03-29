@@ -23,7 +23,7 @@ import io.percy.selenium.Percy;
 public class TestBase {
 
 	public static WebDriver driver;
-	public static Properties prop;
+	static Properties prop;
 	public static Percy percy;
 
 	public TestBase() {
