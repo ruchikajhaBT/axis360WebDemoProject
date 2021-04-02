@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.bt.qa.testcases.CheckoutPercyTest"/>
+      <class name="com.bt.qa.testcases.AppliToolsDemoTest">
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
