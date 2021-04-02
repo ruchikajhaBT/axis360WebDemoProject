@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import io.percy.selenium.Percy;
 
 //import io.percy.examplepercyjavaselenium.Percy;
@@ -25,11 +26,12 @@ public class TestBase {
 	public static WebDriver driver;
 	static Properties prop;
 	public static Percy percy;
+	protected FileInputStream ip;
 
 	public TestBase() {
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(
+			 ip = new FileInputStream(
 					System.getProperty("user.dir") + "/src/main/java/com/bt" + "/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
@@ -42,7 +44,7 @@ public class TestBase {
 	public static void initialization() {
 		
 		String browserName = prop.getProperty("browser");
-
+		
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "C:/Users/jhar/Desktop/workspace/axis360/lib/drivers/chromedriver.exe");
 			
@@ -64,6 +66,10 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.get(prop.getProperty("url"));
+		
+
+
+        
 
 	}
 	
